@@ -28,7 +28,7 @@ body p {
   width: 197px;
   padding: 15px;
 }
-.header__logo--index {
+.header__logo--index_shadow {
   z-index: 1;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
