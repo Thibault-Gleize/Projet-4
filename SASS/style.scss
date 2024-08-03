@@ -3,17 +3,57 @@
 $main-bg-color:#F6F6F6;
 $localisation-bg-color:#EAEAEA;
 
+$main-bg-btn-color:#9356DC;
+$second-bg-btn-color:#FF79DA;
+$light-main-bg-btn-color: rgb(147, 86, 220, 0.85);
+$light-second-bg-btn-color: rgb(255, 121, 218, 0.85);
+
+/// Mixin ///
+
+@mixin btn-bg-color($color1, $color2){
+    background: linear-gradient(to top, $color1, $color2);
+}
+
 /// Modification du user agent style ///
 
 body{
-
     margin: 0;
     background-color: $main-bg-color;
 
-    p{
+    .index_h2, .index_p{
+        margin-block-start: 0px;
+        margin-block-end: 0px;
         font-family: Roboto;
+    }
+
+    .index_p{
         font-size: 1rem;
         font-weight: 500;
+    }
+
+    .index_h2{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .btn{
+        color: white;
+        @include btn-bg-color($main-bg-btn-color, $second-bg-btn-color);
+        width: 218px;
+        height: 50px;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 25px;
+        box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
+        border-width: 0;
+        padding-block: 0px;
+        padding-inline: 0px;
+
+        &:hover{
+            @include btn-bg-color($light-main-bg-btn-color, $light-second-bg-btn-color);
+            box-shadow: 0px 4px 15px rgb(0 0 0 / 35%)
+        }
     }
 }
 
@@ -37,21 +77,55 @@ body{
         background-color: white;
 
         &--img{
-            width: 197px;
+            width: 162px;
             padding: 15px;
         }
     }
 
-    &__logo--index{
+    &__logo--index_shadow{
             z-index: 1;
             box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
     }
 
     &__localisation{
         width: 100%;
+        height: 50px;
         justify-content: center;
-        gap: 29px;
+        gap: 17px;
         background-color: $localisation-bg-color;
         box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     }
+}
+
+
+            /// Body ///
+
+/// Presentation /// 
+
+.presentation{
+
+    .index_h2, .index_p, input{
+        position: absolute;
+        text-align: center;
+    }
+    
+    .index_h2{
+        width: 73%;
+        height: 68px;
+        top: 152px;
+        left: 42px;
+    }
+
+    .index_p{
+        width: 84%;
+        height: 46px;
+        top: 220px;
+        left: 34px;
+    }
+
+    .btn{
+        top: 293px;
+        left: 82px;
+    }
+
 }
