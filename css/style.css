@@ -124,6 +124,7 @@ body .btn:hover {
   height: 78px;
   width: 322px;
   border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
 .functionning .functionning__card--content i {
   margin-left: 34px;
