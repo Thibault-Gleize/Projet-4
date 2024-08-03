@@ -197,4 +197,34 @@ body .btn:hover {
   padding-right: 25px;
 }
 
+footer {
+  background-color: #353535;
+  color: white;
+}
+footer .footer_p, footer li {
+  padding-left: 25px;
+}
+footer .footer_p {
+  padding-top: 22px;
+  margin-bottom: 16px;
+  font-family: Shrikhand;
+  font-size: 1.125rem;
+}
+footer ul {
+  font-family: Roboto;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-bottom: 22px;
+  list-style-type: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding-inline-start: 0px;
+}
+footer li i {
+  width: 15px;
+  margin-right: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */
