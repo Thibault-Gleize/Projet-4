@@ -104,28 +104,28 @@ body{
 
 .presentation{
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 39px;
+    margin-bottom: 57px;
+
     .index_h2, .index_p, input{
-        position: absolute;
         text-align: center;
     }
+
+        .index_h2{
+            width: 73%;
+            height: 68px;
+        }
+
+        .index_p{
+            width: 84%;
+            height: 46px;
+        }
     
-    .index_h2{
-        width: 73%;
-        height: 68px;
-        top: 152px;
-        left: 42px;
-    }
-
-    .index_p{
-        width: 84%;
-        height: 46px;
-        top: 220px;
-        left: 34px;
-    }
-
-    .btn{
-        top: 293px;
-        left: 82px;
-    }
+        .btn{
+            margin-top: 27px;
+        }
 
 }
