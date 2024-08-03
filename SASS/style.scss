@@ -7,11 +7,28 @@ $main-bg-btn-color:#9356DC;
 $second-bg-btn-color:#FF79DA;
 $light-main-bg-btn-color: rgb(147, 86, 220, 0.85);
 $light-second-bg-btn-color: rgb(255, 121, 218, 0.85);
+$new-bg-color: #99E2D0;
+$new-text-color : #008766;
 
 /// Mixin ///
 
 @mixin btn-bg-color($color1, $color2){
     background: linear-gradient(to top, $color1, $color2);
+}
+
+@mixin new-panel{
+    position: absolute;
+    right: 12px;
+    top: 13px;
+    z-index: 1;
+    color: $new-text-color;
+    background-color: $new-bg-color;
+    width: 80px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
 }
 
 /// Modification du user agent style ///
@@ -20,7 +37,7 @@ body{
     margin: 0;
     background-color: $main-bg-color;
 
-    .index_h2, .index_p{
+    .index_h2, .index_p, h3{
         margin-block-start: 0px;
         margin-block-end: 0px;
         font-family: Roboto;
@@ -34,6 +51,11 @@ body{
     .index_h2{
         font-size: 1.5rem;
         font-weight: bold;
+    }
+
+    a{
+        color:inherit;
+        text-decoration: none;
     }
 
     .btn{
@@ -181,4 +203,68 @@ body{
             color: $main-bg-btn-color;
         }
     }
+}
+
+/// Restaurants /// 
+
+.restaurants{
+
+    padding: 0px 17.5px;
+    display: flex;
+    flex-direction: column;
+    gap:18px;
+    margin-bottom: 66px;
+
+    h2{
+        margin: 54px 0px 8px 0px;
+    }
+
+    &__card{
+        
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+
+        img{
+            width: 100%;
+            height: 174px;
+            object-fit: cover;
+            object-position: 20% 61%;
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        &--new{
+            @include new-panel()
+        }
+
+        &--content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 77px;
+            background-color: white;
+            border-radius: 0px 0px 15px 15px;
+
+            &--text{
+
+                padding-left: 13px;
+
+                h3{
+                    font-size: 1.125rem;
+                    margin-bottom: 5px;
+                }
+
+                p{
+                    font-size: 1.063rem;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        &--favorite{
+            padding-right: 25px;
+        }
+    }
+
 }
