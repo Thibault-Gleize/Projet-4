@@ -89,4 +89,47 @@ body .btn:hover {
   margin-top: 27px;
 }
 
+.functionning {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 48px 20px 68px 20px;
+  background-color: white;
+}
+.functionning i, .functionning p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.functionning .number {
+  height: 24px;
+  width: 24px;
+  background-color: #9356DC;
+  border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
+  color: white;
+  z-index: 1;
+}
+.functionning .functionning__card {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  z-index: 2;
+}
+.functionning .functionning__card--content {
+  display: flex;
+  position: relative;
+  right: 11px;
+  gap: 27px;
+  background-color: #F6F6F6;
+  height: 78px;
+  width: 322px;
+  border-radius: 20px;
+}
+.functionning .functionning__card--content i {
+  margin-left: 34px;
+}
+.functionning .functionning__card--content .fa-store {
+  color: #9356DC;
+}
+
 /*# sourceMappingURL=style.css.map */

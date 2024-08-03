@@ -129,3 +129,55 @@ body{
         }
 
 }
+
+/// Functionning /// 
+
+.functionning{
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 48px 20px 68px 20px;
+    background-color: white;
+
+    i, p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .number{
+        height: 24px;
+        width: 24px;
+        background-color: $main-bg-btn-color;
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+        color: white;
+        z-index: 1;
+    }
+
+    .functionning__card{
+        display: flex;
+        align-items: center;
+        height: 72px;
+        z-index: 2;
+    }
+
+    .functionning__card--content{
+        display: flex;
+        position: relative;
+        right: 11px;
+        gap: 27px;
+        background-color: $main-bg-color;
+        height: 78px;
+        width: 322px;
+        border-radius: 20px;
+
+        i{
+            margin-left: 34px;
+        }
+
+        .fa-store{
+            color: $main-bg-btn-color;
+        }
+    }
+}
