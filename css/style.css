@@ -42,7 +42,7 @@ body .btn:hover {
   display: flex;
 }
 
-.header, .header__localisation {
+.header, .header__localisation, .header__logo {
   align-items: center;
 }
 
@@ -57,6 +57,10 @@ body .btn:hover {
 .header__logo--img {
   width: 162px;
   padding: 15px;
+}
+.header__logo--arrow {
+  position: relative;
+  right: 55px;
 }
 .header__logo--index_shadow {
   z-index: 1;

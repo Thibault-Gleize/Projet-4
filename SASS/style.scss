@@ -87,7 +87,7 @@ body{
     display: flex;
 }
 
-.header, .header__localisation{
+.header, .header__localisation, .header__logo{
     align-items: center;
 }
 
@@ -102,6 +102,11 @@ body{
         &--img{
             width: 162px;
             padding: 15px;
+        }
+
+        &--arrow{
+            position: relative;
+            right: 55px;
         }
     }
 
