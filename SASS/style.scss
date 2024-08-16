@@ -10,11 +10,12 @@ $light-second-bg-btn-color: rgb(255, 121, 218, 0.85);
 $new-bg-color: #99E2D0;
 $new-text-color : #008766;
 $footer-bg-color: #353535;
+$underline-color: #99E2D0;
 
 /// Mixin ///
 
 @mixin btn-bg-color($color1, $color2){
-    background: linear-gradient(to top, $color1, $color2);
+    background: linear-gradient(161deg, $color1, $color2);
 }
 
 @mixin new-panel{
@@ -38,10 +39,17 @@ body{
     margin: 0;
     background-color: $main-bg-color;
 
-    .index_h2, .index_p, h3{
+    h2, p, h3{
         margin-block-start: 0px;
         margin-block-end: 0px;
         font-family: Roboto;
+    }
+
+    h1{
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        font-family: Shrikhand;
+        font-size: 1.75rem;
     }
 
     .index_p{
@@ -61,7 +69,7 @@ body{
 
     .btn{
         color: white;
-        @include btn-bg-color($main-bg-btn-color, $second-bg-btn-color);
+        @include btn-bg-color($second-bg-btn-color, $main-bg-btn-color);
         width: 218px;
         height: 50px;
         font-family: Roboto;
@@ -72,11 +80,17 @@ body{
         border-width: 0;
         padding-block: 0px;
         padding-inline: 0px;
+        transition: all 0.3s;
 
         &:hover{
-            @include btn-bg-color($light-main-bg-btn-color, $light-second-bg-btn-color);
+            @include btn-bg-color($light-second-bg-btn-color, $light-main-bg-btn-color);
             box-shadow: 0px 4px 15px rgb(0 0 0 / 35%)
         }
+    }
+
+    img{
+        object-fit: cover;
+        width: 100%;
     }
 }
 
@@ -87,8 +101,9 @@ body{
     display: flex;
 }
 
-.header, .header__localisation{
+.header, .header__localisation, .header__logo{
     align-items: center;
+    justify-content: center;
 }
 
 .header{
@@ -96,12 +111,16 @@ body{
 
     &__logo{
         width: 100%;
-        justify-content: center;
         background-color: white;
 
         &--img{
             width: 162px;
             padding: 15px;
+        }
+
+        &--arrow{
+            position: relative;
+            right: 55px;
         }
     }
 
@@ -113,7 +132,6 @@ body{
     &__localisation{
         width: 100%;
         height: 50px;
-        justify-content: center;
         gap: 17px;
         background-color: $localisation-bg-color;
         box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
@@ -126,7 +144,6 @@ body{
 /// Presentation /// 
 
 .presentation{
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,9 +245,7 @@ body{
         width: 100%;
 
         img{
-            width: 100%;
             height: 174px;
-            object-fit: cover;
             object-position: 20% 61%;
             border-radius: 15px 15px 0px 0px;
         }
@@ -265,10 +280,119 @@ body{
 
         &--favorite{
             padding-right: 25px;
+
+            .fa-solid{
+                width:20px;
+                height: 20px;
+                position: relative;
+                left: 24px;
+                color: transparent;
+                transition: all 0.5s;
+
+                &:hover{
+                    color: purple;
+                }
+            }
         }
+    }
+}
+
+/// Body Restaurants pages ///
+ 
+main{
+
+    img{
+        height: 275px;
+    }
+} 
+
+.menu{
+
+    .menu__restaurant-title, .menu__starters, .menu__main, .menu__desserts{
+        margin-bottom: 40px;
+    }
+
+    .menu__header{
+        font-size: 1rem;
+        font-weight: 300;
+        margin-bottom: 3px;
+    }
+
+    .card__header{
+        font-size: 1.125rem;
+    }
+
+    .card__description{
+        font-size: 0.938rem;
+        font-weight: 300;
+    }
+
+    .card__price{
+        font-size: 0.938rem;
+        font-weight: bold;
+    }
+
+    background-color: $main-bg-color;
+    padding: 32px 13px 0px 13px;
+
+    position: relative;
+    bottom: 60px;
+    border-radius: 40px 40px 0px 0px;
+
+    &__restaurant-title{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        i{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fa-solid{
+            position: relative;    
+            color: transparent;
+            transition: all 0.5s;
+
+            &:hover{
+                color: purple;
+            }
+        }
+
+    }
+
+    &__btn{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__underline{
+        width: 40px;
+        height: 3px;
+        background: $underline-color;
+    }
+
+    .menu__cards{
+        height: 39px;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: white;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        box-shadow: 0 4px 15px rgb(0 0 0 / 10%);
+        margin-top: 12px;
     }
 
 }
+
+
+
+
+
+
+
 
 /// Footer ///
 
