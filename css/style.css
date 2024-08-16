@@ -70,8 +70,9 @@ body img {
   padding: 15px;
 }
 .header__logo--arrow {
-  position: relative;
-  right: 55px;
+  position: absolute;
+  left: 23px;
+  top: 20px;
 }
 .header__logo--index_shadow {
   z-index: 1;
