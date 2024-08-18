@@ -5,8 +5,6 @@ $localisation-bg-color:#EAEAEA;
 
 $main-bg-btn-color:#9356DC;
 $second-bg-btn-color:#FF79DA;
-$light-main-bg-btn-color: rgb(147, 86, 220, 0.85);
-$light-second-bg-btn-color: rgb(255, 121, 218, 0.85);
 $new-bg-color: #99E2D0;
 $new-text-color : #008766;
 $footer-bg-color: #353535;
@@ -80,10 +78,10 @@ body{
         border-width: 0;
         padding-block: 0px;
         padding-inline: 0px;
-        transition: all 0.3s;
+        transition: all 0.2s;
 
         &:hover{
-            @include btn-bg-color($light-second-bg-btn-color, $light-main-bg-btn-color);
+            opacity: 85%;
             box-shadow: 0px 4px 15px rgb(0 0 0 / 35%)
         }
     }
