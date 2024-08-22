@@ -14,73 +14,73 @@
 
 <body>
     <header class="header">
-        <div class="header__logo header__logo--index_shadow">
-            <img class="header__logo--img" src="images/logo/ohmyfood.png" alt="logo ohmyfood" title="ohmyfood">
+        <div class="header__logo header-shadow">
+            <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" title="ohmyfood">
         </div>
         <div class="header__localisation">
             <i class="fa-solid fa-location-dot"></i>
-            <p class="index_p">Paris, Belleville</p>
+            <p>Paris, Belleville</p>
         </div>
     </header>
 
     <main>
         <section class="presentation">
-            <h2 class="index_h2">Réservez le menu qui vous convient</h2>
-            <p class="index_p">Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-            <input class="btn" type="button" value="Explorer nos restaurants">
+            <h2>Réservez le menu qui vous convient</h2>
+            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+            <a href="#Restaurants"><input class="btn" type="button" value="Explorer nos restaurants"></a>
         </section>
-        <section class="functionning">
-            <h2 class="index_h2">Fonctionnement</h2>
-            <article class="functionning__card">
-                <p class="index_p number">1</p>
-                <div class="functionning__card--content">
+        <section class="instruction">
+            <h2>Fonctionnement</h2>
+            <article class="instruction__card">
+                <p class="number">1</p>
+                <div class="instruction__card--content">
                     <i class="fa-solid fa-mobile-screen-button"></i>
-                    <p class="index_p">Choisissez un restaurant</p>
+                    <p>Choisissez un restaurant</p>
                 </div>
             </article>
-            <article class="functionning__card">
-                <p class="index_p number">2</p>
-                <div class="functionning__card--content">
+            <article class="instruction__card">
+                <p class="number">2</p>
+                <div class="instruction__card--content">
                     <i class="fa-solid fa-list-ul"></i>
-                    <p class="index_p">Composez votre menu</p>
+                    <p>Composez votre menu</p>
                 </div>
             </article>
-            <article class="functionning__card">
-                <p class="index_p number">3</p>
-                <div class="functionning__card--content">
+            <article class="instruction__card">
+                <p class="number">3</p>
+                <div class="instruction__card--content">
                     <i class="fa-solid fa-store"></i>
-                    <p class="index_p">Dégustez au restaurant</p>
+                    <p>Dégustez au restaurant</p>
                 </div>
             </article>
         </section>
-        <section class="restaurants">
-            <h2 class="index_h2">Restaurants</h2>
+        <section class="restaurants" id="Restaurants">
+            <h2>Restaurants</h2>
             <a href="restaurants/la_palette_du_gout.html">
                 <article class="restaurants__card">
                     <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Images du restaurant la palette du gout" title="La palette du gout">
-                    <p class="index_p restaurants__card--new">Nouveau</p>
-                    <div class="restaurants__card--content">
-                        <div class="restaurants__card--content--text">
+                    <span><p>Nouveau</p></span>
+                    <div class="restaurants__card-content">
+                        <div class="restaurant__card-text">
                             <h3>La palette du goût</h3>
-                            <p class="index_p">Ménilmontant</p>
+                            <p>Ménilmontant</p>
                         </div>
-                        <div class="restaurants__card--favorite">
+                        <div class="favorite">
                             <i class="fa-solid fa-heart fa-xl"></i>
                             <i class="fa-regular fa-heart fa-xl"></i>
                         </div>
                     </div>
                 </article>
             </a>
-            <a href="/restaurants/la_note_enchantée.html">
+            <a href="restaurants/la_note_enchantée.html">
                 <article class="restaurants__card">
                     <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Images du restaurant La note enchantée" title="La note enchantée">
-                    <p class="index_p restaurants__card--new">Nouveau</p>
-                    <div class="restaurants__card--content">
-                        <div class="restaurants__card--content--text">
+                    <span><p>Nouveau</p></span>
+                    <div class="restaurants__card-content">
+                        <div class="restaurant__card-text">
                             <h3>La note enchantée</h3>
-                            <p class="index_p">Charonne</p>
+                            <p>Charonne</p>
                         </div>
-                        <div class="restaurants__card--favorite">
+                        <div class="favorite">
                             <i class="fa-solid fa-heart fa-xl"></i>
                             <i class="fa-regular fa-heart fa-xl"></i>
                         </div>
@@ -90,12 +90,12 @@
             <a href="restaurants/a_la_francaise.html">
                 <article class="restaurants__card">
                     <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Images du À la française" title="À la française">
-                    <div class="restaurants__card--content">
-                        <div class="restaurants__card--content--text">
+                    <div class="restaurants__card-content">
+                        <div class="restaurant__card-text">
                             <h3>À la française</h3>
-                            <p class="index_p">Cité Rouge</p>
+                            <p>Cité Rouge</p>
                         </div>
-                        <div class="restaurants__card--favorite">
+                        <div class="favorite">
                             <i class="fa-solid fa-heart fa-xl"></i>
                             <i class="fa-regular fa-heart fa-xl"></i>
                         </div>
@@ -105,12 +105,12 @@
             <a href="restaurants/le_délice_des_sens.html">
                 <article class="restaurants__card">
                     <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Images du restaurant Le délice des sens" title="Le délice des sens">
-                    <div class="restaurants__card--content">
-                        <div class="restaurants__card--content--text">
+                    <div class="restaurants__card-content">
+                        <div class="restaurant__card-text">
                             <h3>Le délice des sens</h3>
-                            <p class="index_p">Folie-Méricourt</p>
+                            <p>Folie-Méricourt</p>
                         </div>
-                        <div class="restaurants__card--favorite">
+                        <div class="favorite">
                             <i class="fa-solid fa-heart fa-xl"></i>
                             <i class="fa-regular fa-heart fa-xl"></i>
                         </div>
@@ -121,7 +121,7 @@
     </main>
 
     <footer>
-         <p class="index_p footer_p">ohmyfood</p>
+         <p class=" footer_p">ohmyfood</p>
          <ul class="footer__list">
             <li><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
             <li><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a></li>
