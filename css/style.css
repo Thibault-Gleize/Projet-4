@@ -94,7 +94,6 @@ i {
   bottom: 20px;
 }
 .favorite:hover > .fa-regular {
-  transform-origin: bottom;
   scale: 0;
   opacity: 1;
 }
