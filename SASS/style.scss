@@ -42,6 +42,28 @@ $underline-color: #99E2D0;
     border-radius: 2px;
 }
 
+/// Keyframes /// 
+
+@keyframes appear{
+    from{
+        scale:0;
+    }
+
+    to{
+        scale: 1;
+    }
+}
+
+@keyframes disapear{
+    from{
+        scale: 1;
+    }
+
+    to{
+        scale: 0;
+    }
+}
+
 /// Modification du user agent style + Ajout du style général ///
 
 
@@ -95,7 +117,7 @@ i{
     border-width: 0;
     padding-block: 0px;
     padding-inline: 0px;
-    transition: all 0.2s;
+    transition: all 0.5s;
 
     &:hover{
         opacity: 85%;
@@ -104,18 +126,40 @@ i{
 }
 
 .favorite{
-    padding-right: 25px;
-
-    .fa-solid{
-        width:20px;
-        height: 20px;
-        position: relative;
-        left: 24px;
-        color: transparent;
+    height: 20px;
+    
+    .fa-regular, .fa-solid{
+        transform-origin: bottom;
         transition: all 0.5s;
+    }
 
-        &:hover{
-            color: purple;
+    i{
+        @include flex-center();
+        width: 24px;
+        height: 20px;
+    }
+    
+    .fa-solid{
+        background: linear-gradient(-6deg, #FF79DA,#9356DC);
+        background-clip: text;
+        color: transparent;
+        scale:0;
+    }
+
+    .fa-regular{
+        position: relative;
+        bottom: 20px;
+    }
+
+    &:hover{
+        > .fa-regular{
+            transform-origin:bottom ;
+            scale: 0;
+            opacity: 1;
+        }
+
+        > .fa-solid{
+            scale: 1;
         }
     }
 }
@@ -280,6 +324,7 @@ i{
         width: 100%;
 
         &-content{
+            padding: 0px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -366,9 +411,6 @@ i{
         justify-content: center;
     }
 
-    .favorite{
-        padding-right: 0;
-    }
 }
 
 

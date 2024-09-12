@@ -1,3 +1,19 @@
+@keyframes appear {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+@keyframes disapear {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 0;
+  }
+}
 * {
   font-family: Roboto;
 }
@@ -46,7 +62,7 @@ i {
   border-width: 0;
   padding-block: 0px;
   padding-inline: 0px;
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 .btn:hover {
   opacity: 85%;
@@ -54,18 +70,36 @@ i {
 }
 
 .favorite {
-  padding-right: 25px;
-}
-.favorite .fa-solid {
-  width: 20px;
   height: 20px;
-  position: relative;
-  left: 24px;
-  color: transparent;
+}
+.favorite .fa-regular, .favorite .fa-solid {
+  transform-origin: bottom;
   transition: all 0.5s;
 }
-.favorite .fa-solid:hover {
-  color: purple;
+.favorite i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 20px;
+}
+.favorite .fa-solid {
+  background: linear-gradient(-6deg, #FF79DA, #9356DC);
+  background-clip: text;
+  color: transparent;
+  scale: 0;
+}
+.favorite .fa-regular {
+  position: relative;
+  bottom: 20px;
+}
+.favorite:hover > .fa-regular {
+  transform-origin: bottom;
+  scale: 0;
+  opacity: 1;
+}
+.favorite:hover > .fa-solid {
+  scale: 1;
 }
 
 .header, .header__localisation, .header__logo {
@@ -209,6 +243,7 @@ i {
   width: 100%;
 }
 .restaurants__card-content {
+  padding: 0px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -277,9 +312,6 @@ i {
 .menu__btn {
   display: flex;
   justify-content: center;
-}
-.menu .favorite {
-  padding-right: 0;
 }
 
 footer {
