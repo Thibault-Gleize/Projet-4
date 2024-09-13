@@ -94,7 +94,6 @@ i {
   bottom: 20px;
 }
 .favorite:hover > .fa-regular {
-  transform-origin: bottom;
   scale: 0;
   opacity: 1;
 }
@@ -308,6 +307,50 @@ i {
 .menu__cards .card__price {
   font-size: 0.938rem;
   font-weight: bold;
+}
+.menu__cards--selected {
+  width: 0px;
+  height: 69px;
+  position: relative;
+  top: 15px;
+  left: 15px;
+  background-color: #99E2D0;
+  border-radius: 0px 15px 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+.menu__cards .menu__cards--price-and-selected {
+  display: flex;
+}
+.menu__cards .menu__cards--price {
+  display: flex;
+  align-items: end;
+}
+.menu__cards .fa-check {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  border-radius: 50% 50% 50% 50%;
+  background-color: white;
+  color: #99E2D0;
+}
+.menu__cards:hover {
+  gap: 15px;
+}
+.menu__cards:hover .menu__cards--text {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__cards:hover .menu__cards--text p, .menu__cards:hover .menu__cards--text h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__cards:hover .menu__cards--selected {
+  width: 50px;
+  visibility: visible;
 }
 .menu__btn {
   display: flex;
