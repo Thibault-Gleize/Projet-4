@@ -308,6 +308,15 @@ i {
   font-size: 0.938rem;
   font-weight: bold;
 }
+.menu__cards .menu__cards--text {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__cards .menu__cards--text p, .menu__cards .menu__cards--text h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .menu__cards--selected {
   width: 0px;
   height: 69px;
@@ -320,6 +329,8 @@ i {
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s;
 }
 .menu__cards .menu__cards--price-and-selected {
   display: flex;
@@ -339,18 +350,17 @@ i {
 .menu__cards:hover {
   gap: 15px;
 }
-.menu__cards:hover .menu__cards--text {
-  overflow: hidden;
-  white-space: nowrap;
-}
-.menu__cards:hover .menu__cards--text p, .menu__cards:hover .menu__cards--text h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .menu__cards:hover .menu__cards--selected {
   width: 50px;
   visibility: visible;
+  opacity: 1;
+}
+.menu__cards:hover i {
+  visibility: visible;
+  width: 25px;
+}
+.menu__cards:hover i::before {
+  width: auto;
 }
 .menu__btn {
   display: flex;
