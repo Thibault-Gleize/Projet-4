@@ -18,6 +18,10 @@ $underline-color: #99E2D0;
 $menu-card-bg:white;
 $selected-color: #99E2D0;
 
+$loader-box:grey;
+$loader-bar-main: #9356DC;
+$loader-bar-second: #FF79DA;
+
 /// Mixin ///
 
 @mixin btn-bg-color($color1, $color2){
@@ -47,23 +51,103 @@ $selected-color: #99E2D0;
 
 /// Bar de chargement /// 
 
-@keyframes appear{
-    from{
-        scale:0;
+.loading_page{
+    height: 39px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    @include flex-center();
+}
+
+.loading_text p{
+    width: 250px;
+    opacity: 0;
+    animation: loading-container 3s, disappear 0.5s 3s;
+    color: black;
+    text-align: center;
+}
+
+.loader{
+    width: 250px;
+    height: 15px;
+    border: 5px solid $loader-box;
+    border-radius: 35px;
+    opacity: 0;
+    animation: loading-container 3s, disappear 0.5s 3s;
+}
+
+.loader .loader__bar{
+    z-index: 2;
+    display: inline-block;
+    padding: 3px;
+    margin: 3px;
+    width: 235px;
+    height: 3px;
+    background: linear-gradient(-6deg, $loader-bar-main,$loader-bar-second);
+    opacity: 0;
+    border-radius: 35px;
+    transform-origin: left;
+    animation: loading 2s 0.5s forwards;
+}
+
+@keyframes loading{
+    0%{
+        transform: scaleX(0);
     }
 
-    to{
-        scale: 1;
+    10%{
+        opacity: 0.25;
+        transform: scaleX(25%);
+    }
+
+    44%{
+        opacity: 0.50;
+        transform: scaleX(50%);
+    }
+
+    85%{
+        opacity: 0.75;
+        transform: scaleX(75%);
+    }
+
+    95%{
+        opacity: 1;
+        transform: scaleX(100%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scaleX(100%);
     }
 }
 
-@keyframes disapear{
+@keyframes loading-container{
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes appear{
     from{
-        scale: 1;
+        opacity:0;
     }
 
     to{
-        scale: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes disappear{
+    from{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
     }
 }
 
@@ -129,7 +213,7 @@ i{
 }
 
 .favorite{
-    height: 20px;
+    height: 21px;
     
     .fa-regular, .fa-solid{
         transform-origin: bottom;
@@ -139,7 +223,7 @@ i{
     i{
         @include flex-center();
         width: 24px;
-        height: 20px;
+        height: 21px;
     }
     
     .fa-solid{
@@ -176,6 +260,7 @@ i{
 .header{
     flex-direction: column;
 
+
     img{
         width: 162px;
         padding: 15px;
@@ -197,6 +282,8 @@ i{
         gap: 17px;
         background-color: $localisation-bg-color;
         box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        opacity: 0;
+        animation: appear 1s 3.5s forwards; 
     }
 
     /// Flèche de retour pour revenir à la page d'acceuil /// 
@@ -217,9 +304,16 @@ i{
 .presentation{
     @include flex-center();
     flex-direction: column;
-    margin-top: 39px;
     margin-bottom: 57px;
     text-align: center;
+
+    opacity: 0;
+    animation: appear 1s 3.5s forwards; 
+
+        h1{
+            width: 73%;
+            height: 68px;
+        }
 
         h2{
             width: 73%;
@@ -245,6 +339,9 @@ i{
     gap: 25px;
     padding: 48px 20px 68px 20px;
     background-color: $func-bg-color;
+
+    opacity: 0;
+    animation: appear 1s 3.5s forwards; 
 
     i, p{
         @include flex-center();
@@ -296,6 +393,9 @@ i{
     flex-direction: column;
     gap:18px;
     margin-bottom: 66px;
+
+    opacity: 0;
+    animation: appear 1s 3.5s forwards; 
 
     h2{
         margin: 54px 0px 8px 0px;
@@ -477,14 +577,39 @@ i{
 
 }
 
+/// Animation menu /// 
 
 
+.menu__starters{
+    opacity: 0;
+    animation: appear 0.5s 0.5s forwards;
+}
+
+.menu__main{
+    opacity: 0;
+    animation: appear 0.5s 1s forwards;
+}
+
+.menu__desserts{
+    opacity: 0;
+    animation: appear 0.5s 1.5s forwards;
+}
+
+.menu__btn{
+    opacity: 0;
+    animation: appear 0.5s 1.5s forwards
+}
 
 
 
 
 
 /// Footer ///
+
+.footer__index{
+opacity: 0;
+animation: appear 1s 3.5s forwards; 
+}
 
 footer{
 
@@ -495,7 +620,7 @@ footer{
         padding-left: 25px;
     }
 
-    .footer_p{
+    p{
         padding-top: 22px;
         margin-bottom: 16px;
         font-family: Shrikhand;

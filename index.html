@@ -24,8 +24,16 @@
     </header>
 
     <main>
+        <div class="loading_page">
+            <div class="loading_text">
+                <p>Veuillez patienter, nous vérifions les restaurants disponibles</p>
+            </div>
+            <div class="loader">
+                <span class="loader__bar"></span>
+            </div>
+        </div>
         <section class="presentation">
-            <h2>Réservez le menu qui vous convient</h2>
+            <h1>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
             <input class="btn" type="button" value="Explorer nos restaurants" onclick="location.href='#Restaurants'">
         </section>
@@ -120,13 +128,13 @@
         </section>
     </main>
 
-    <footer>
-         <p class=" footer_p">ohmyfood</p>
-         <ul class="footer__list">
+    <footer class="footer__index">
+         <p>ohmyfood</p>
+         <ul>
             <li><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
             <li><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a></li>
             <li><a href="#">Mentions légales</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="mailto:ohmyfood@test.com">Contact</a></li>
          </ul>
     </footer>
 </body>

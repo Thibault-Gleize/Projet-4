@@ -1,17 +1,91 @@
-@keyframes appear {
-  from {
-    scale: 0;
+.loading_page {
+  height: 39px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_text p {
+  width: 250px;
+  opacity: 0;
+  animation: loading-container 3s, disappear 0.5s 3s;
+  color: black;
+  text-align: center;
+}
+
+.loader {
+  width: 250px;
+  height: 15px;
+  border: 5px solid grey;
+  border-radius: 35px;
+  opacity: 0;
+  animation: loading-container 3s, disappear 0.5s 3s;
+}
+
+.loader .loader__bar {
+  z-index: 2;
+  display: inline-block;
+  padding: 3px;
+  margin: 3px;
+  width: 235px;
+  height: 3px;
+  background: linear-gradient(-6deg, #9356DC, #FF79DA);
+  opacity: 0;
+  border-radius: 35px;
+  transform-origin: left;
+  animation: loading 2s 0.5s forwards;
+}
+
+@keyframes loading {
+  0% {
+    transform: scaleX(0);
   }
-  to {
-    scale: 1;
+  10% {
+    opacity: 0.25;
+    transform: scaleX(25%);
+  }
+  44% {
+    opacity: 0.5;
+    transform: scaleX(50%);
+  }
+  85% {
+    opacity: 0.75;
+    transform: scaleX(75%);
+  }
+  95% {
+    opacity: 1;
+    transform: scaleX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(100%);
   }
 }
-@keyframes disapear {
+@keyframes loading-container {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
   from {
-    scale: 1;
+    opacity: 0;
   }
   to {
-    scale: 0;
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 * {
@@ -70,7 +144,7 @@ i {
 }
 
 .favorite {
-  height: 20px;
+  height: 21px;
 }
 .favorite .fa-regular, .favorite .fa-solid {
   transform-origin: bottom;
@@ -81,7 +155,7 @@ i {
   justify-content: center;
   align-items: center;
   width: 24px;
-  height: 20px;
+  height: 21px;
 }
 .favorite .fa-solid {
   background: linear-gradient(-6deg, #FF79DA, #9356DC);
@@ -128,6 +202,8 @@ i {
   gap: 17px;
   background-color: #EAEAEA;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  animation: appear 1s 3.5s forwards;
 }
 .header__arrow {
   position: absolute;
@@ -140,9 +216,14 @@ i {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 39px;
   margin-bottom: 57px;
   text-align: center;
+  opacity: 0;
+  animation: appear 1s 3.5s forwards;
+}
+.presentation h1 {
+  width: 73%;
+  height: 68px;
 }
 .presentation h2 {
   width: 73%;
@@ -162,6 +243,8 @@ i {
   gap: 25px;
   padding: 48px 20px 68px 20px;
   background-color: white;
+  opacity: 0;
+  animation: appear 1s 3.5s forwards;
 }
 .instruction i, .instruction p {
   display: flex;
@@ -206,6 +289,8 @@ i {
   flex-direction: column;
   gap: 18px;
   margin-bottom: 66px;
+  opacity: 0;
+  animation: appear 1s 3.5s forwards;
 }
 .restaurants h2 {
   margin: 54px 0px 8px 0px;
@@ -367,6 +452,31 @@ i {
   justify-content: center;
 }
 
+.menu__starters {
+  opacity: 0;
+  animation: appear 0.5s 0.5s forwards;
+}
+
+.menu__main {
+  opacity: 0;
+  animation: appear 0.5s 1s forwards;
+}
+
+.menu__desserts {
+  opacity: 0;
+  animation: appear 0.5s 1.5s forwards;
+}
+
+.menu__btn {
+  opacity: 0;
+  animation: appear 0.5s 1.5s forwards;
+}
+
+.footer__index {
+  opacity: 0;
+  animation: appear 1s 3.5s forwards;
+}
+
 footer {
   background-color: #353535;
   color: white;
@@ -374,7 +484,7 @@ footer {
 footer .footer_p, footer li {
   padding-left: 25px;
 }
-footer .footer_p {
+footer p {
   padding-top: 22px;
   margin-bottom: 16px;
   font-family: Shrikhand;
