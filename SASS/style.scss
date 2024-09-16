@@ -259,11 +259,16 @@ i{
 
 .header{
     flex-direction: column;
-
-
+ 
     img{
         width: 162px;
         padding: 15px;
+    }
+
+    .img__index{
+        @media only screen and (min-width: 768px){
+            padding: 15px 15px 55px 15px;
+        }
     }
 
     &__logo{
@@ -272,7 +277,11 @@ i{
     }
 
     &-shadow{
-            box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+        box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+
+        @media only screen and (min-width: 768px){
+            box-shadow: none
+        }
     }
 
     &__localisation{
@@ -284,6 +293,10 @@ i{
         box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
         opacity: 0;
         animation: appear 1s 3.5s forwards; 
+
+        @media only screen and (min-width: 768px){
+            box-shadow: none
+        }
     }
 
     /// Flèche de retour pour revenir à la page d'acceuil /// 
@@ -310,23 +323,37 @@ i{
     opacity: 0;
     animation: appear 1s 3.5s forwards; 
 
+    @media only screen and (min-width: 768px){
+        margin-bottom: 30px;        
+    }
+
         h1{
             width: 73%;
             height: 68px;
-        }
 
-        h2{
-            width: 73%;
-            height: 68px;
+            @media only screen and (min-width: 768px){
+                height: auto;
+                margin-bottom: 23px;
+            }
         }
 
         p{
             width: 84%;
             height: 46px;
+            font-weight: 300;
+
+            @media only screen and (min-width: 768px){
+                height: auto;
+                margin-bottom: 23px;
+            }
         }
     
         .btn{
             margin-top: 27px;
+
+            @media only screen and (min-width: 768px){
+                margin-top: 0px;
+            }
         }
 
 }
@@ -343,6 +370,26 @@ i{
     opacity: 0;
     animation: appear 1s 3.5s forwards; 
 
+    @media only screen and (min-width: 768px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 48px 20px 68px 20px;
+        gap: 0px;
+        flex-wrap: wrap;
+
+    }
+
+    @media only screen and (min-width: 1024px){
+        padding: 50px 180px;
+    }
+
+    h2{
+        @media only screen and (min-width: 768px){
+            grid-column: 1/4;
+        }
+    }
+
     i, p{
         @include flex-center();
     }
@@ -356,8 +403,8 @@ i{
     }
 
     .number{
-        height: 24px;
-        width: 24px;
+        min-height: 24px;
+        min-width: 24px;
         background-color: $main-bg-btn-color;
         border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
         color: $number-text-color;
@@ -380,6 +427,16 @@ i{
             width: 322px;
             border-radius: 20px;
             box-shadow: 0px 4px 15px rgb(0, 0, 0, 15%);
+
+            @media only screen and (min-width: 768px){
+                width: auto;
+            }
+
+            p{
+                @media only screen and (min-width: 768px){
+                    padding-right: 65px;
+                } 
+            }
         }
     }
 }
@@ -397,8 +454,24 @@ i{
     opacity: 0;
     animation: appear 1s 3.5s forwards; 
 
+    @media only screen and (min-width: 768px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 10% 1fr 1fr;
+        column-gap: 60px;
+    }
+
+    @media only screen and (min-width: 1024px){
+        padding: 0px 180px;
+    }
+
     h2{
         margin: 54px 0px 8px 0px;
+
+        @media only screen and (min-width: 768px){
+            margin: 30px 0px 8px 0px;
+            grid-column: 1/3;
+        }
     }
 
     h3{
@@ -444,15 +517,29 @@ i{
 
 /// Body Restaurants pages ///
 
+.main_restaurant{
+    background-color: white;
+}
+
 .menu{
     background-color: $main-bg-color;
     padding: 32px 13px 0px 13px;
-    position: relative;
-    bottom: 60px;
     border-radius: 40px 40px 0px 0px;
+
+    @media only screen and (min-width: 768px){
+        margin: 0px 170px ;
+        position: relative;
+        z-index: 1;
+    }
 
     &-bg-img{
         height: 275px;
+
+        @media only screen and (min-width: 768px){
+            height: 380px;
+            position: relative;
+            top: 40px;
+        }
     }
 
     h1{
@@ -468,12 +555,20 @@ i{
 
     .menu__restaurant-title, .menu__starters, .menu__main, .menu__desserts{
         margin-bottom: 40px;
+
+        @media only screen and (min-width: 1024px){
+            padding:0px 150px;
+        }
     }
 
     &__restaurant-title{
         display: flex;
         align-items: center;
         gap: 30px;
+
+        @media only screen and (min-width: 768px){
+            justify-content: center;
+        }
     }
 
     &__underline{
@@ -573,6 +668,10 @@ i{
     &__btn{
         display: flex;
         justify-content: center;
+
+        @media only screen and (min-width: 768px){
+            padding-bottom: 50px;
+        }
     }
 
 }
@@ -615,34 +714,51 @@ footer{
 
     background-color: $footer-bg-color;
     color: white;
+    padding: 22px 25px;
+    display: flex;
+    flex-direction: column;
 
-    .footer_p, li{
-        padding-left: 25px;
+    @media only screen and (min-width: 768px){
+        flex-direction: row-reverse;
+        justify-content: end;
+        align-items: center;
+        padding: 40px 25px 15px 25px;
+        gap: 30px;
     }
 
     p{
-        padding-top: 22px;
+
         margin-bottom: 16px;
         font-family: Shrikhand;
         font-size: 1.125rem;
+
+        @media only screen and (min-width: 768px){
+            margin: 0px
+        }
     }
 
     ul{
         font-size: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 7px;
-        padding-bottom: 22px;
         list-style-type: none;
         margin-block-start: 0px;
         margin-block-end: 0px;
         padding-inline-start: 0px;
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (min-width: 768px){
+            flex-direction: row;
+            gap: 15px;
+        }
     }
 
     li{
+        margin-bottom: 7px;
+
         i{
             width: 15px;
             margin-right: 10px;
         }
     }
 }
+
