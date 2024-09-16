@@ -97,27 +97,27 @@ $loader-bar-second: #FF79DA;
 
     10%{
         opacity: 0.25;
-        transform: scaleX(25%);
+        transform: scaleX(0.25);
     }
 
     44%{
         opacity: 0.50;
-        transform: scaleX(50%);
+        transform: scaleX(0.50);
     }
 
     85%{
         opacity: 0.75;
-        transform: scaleX(75%);
+        transform: scaleX(0.75);
     }
 
     95%{
         opacity: 1;
-        transform: scaleX(100%);
+        transform: scaleX(1);
     }
 
     100%{
         opacity: 1;
-        transform: scaleX(100%);
+        transform: scaleX(1);
     }
 }
 
@@ -230,7 +230,7 @@ i{
         background: linear-gradient(-6deg, #FF79DA,#9356DC);
         background-clip: text;
         color: transparent;
-        scale:0;
+        transform: scale(0);
     }
 
     .fa-regular{
@@ -240,12 +240,12 @@ i{
 
     &:hover{
         > .fa-regular{
-            scale: 0;
+            transform: scale(0);
             opacity: 1;
         }
 
         > .fa-solid{
-            scale: 1;
+            transform: scale(1);
         }
     }
 }
@@ -482,7 +482,8 @@ i{
     span{
         @include new-panel();
         font-size: 1.063rem;
-        font-weight: 300;
+        font-weight: 500;
+
     }
 
     img{

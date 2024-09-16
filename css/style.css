@@ -45,23 +45,23 @@
   }
   10% {
     opacity: 0.25;
-    transform: scaleX(25%);
+    transform: scaleX(0.25);
   }
   44% {
     opacity: 0.5;
-    transform: scaleX(50%);
+    transform: scaleX(0.5);
   }
   85% {
     opacity: 0.75;
-    transform: scaleX(75%);
+    transform: scaleX(0.75);
   }
   95% {
     opacity: 1;
-    transform: scaleX(100%);
+    transform: scaleX(1);
   }
   100% {
     opacity: 1;
-    transform: scaleX(100%);
+    transform: scaleX(1);
   }
 }
 @keyframes loading-container {
@@ -161,18 +161,18 @@ i {
   background: linear-gradient(-6deg, #FF79DA, #9356DC);
   background-clip: text;
   color: transparent;
-  scale: 0;
+  transform: scale(0);
 }
 .favorite .fa-regular {
   position: relative;
   bottom: 20px;
 }
 .favorite:hover > .fa-regular {
-  scale: 0;
+  transform: scale(0);
   opacity: 1;
 }
 .favorite:hover > .fa-solid {
-  scale: 1;
+  transform: scale(1);
 }
 
 .header, .header__localisation, .header__logo {
@@ -396,7 +396,7 @@ i {
   justify-content: center;
   border-radius: 2px;
   font-size: 1.063rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 .restaurants img {
   height: 174px;
