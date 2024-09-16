@@ -669,10 +669,7 @@ i{
     &__btn{
         display: flex;
         justify-content: center;
-
-        @media only screen and (min-width: 768px){
-            padding-bottom: 50px;
-        }
+        padding-bottom: 50px;
     }
 
 }
