@@ -184,8 +184,14 @@ i {
   padding: 15px;
 }
 @media only screen and (min-width: 768px) {
-  .header .img__index {
-    padding: 15px 15px 55px 15px;
+  .header img {
+    padding: 35px 15px 35px 15px;
+    width: 200px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .header .img__menu {
+    padding: 35px 15px 0px 15px;
   }
 }
 .header__logo {
@@ -219,6 +225,11 @@ i {
   position: absolute;
   left: 23px;
   top: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .header__arrow {
+    top: 40px;
+  }
 }
 
 .presentation {
@@ -338,7 +349,8 @@ i {
 }
 @media only screen and (min-width: 768px) {
   .instruction__card--content p {
-    padding-right: 65px;
+    min-width: 100px;
+    padding-right: 50px;
   }
 }
 
@@ -440,7 +452,7 @@ i {
   .menu-bg-img {
     height: 380px;
     position: relative;
-    top: 40px;
+    top: 35px;
   }
 }
 .menu h1 {

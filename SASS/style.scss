@@ -257,11 +257,16 @@ i{
     img{
         width: 162px;
         padding: 15px;
+
+        @media only screen and (min-width: 768px){
+            padding: 35px 15px 35px 15px;
+            width: 200px;
+        }
     }
 
-    .img__index{
+    .img__menu{
         @media only screen and (min-width: 768px){
-            padding: 15px 15px 55px 15px;
+            padding: 35px 15px 0px 15px;
         }
     }
 
@@ -299,6 +304,10 @@ i{
         position: absolute;
         left: 23px;
         top: 20px;
+
+        @media only screen and (min-width: 768px){
+            top: 40px;
+        }
     }
 
 }
@@ -428,7 +437,8 @@ i{
 
             p{
                 @media only screen and (min-width: 768px){
-                    padding-right: 65px;
+                    min-width: 100px;
+                    padding-right: 50px;
                 } 
             }
         }
@@ -533,7 +543,7 @@ i{
         @media only screen and (min-width: 768px){
             height: 380px;
             position: relative;
-            top: 40px;
+            top: 35px;
         }
     }
 
