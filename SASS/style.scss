@@ -1,39 +1,64 @@
-/// Variables couleurs ///
+/////// Variables couleurs ///////
 
-$main-bg-color:#F6F6F6;
-$localisation-bg-color:#EAEAEA;
+// Partie Header
+    // Couleur background partie localisation
+    $localisation-bg-color:#EAEAEA;
+    // Couleur background du header 
+    $logo-bg-color:white;
+    // Couleur background partie instruction
+    $inst-bg-color:white;
 
-$logo-bg-color:white;
-$btn-text-color:white;
-$func-bg-color:white;
-$number-text-color:white;
+// Partie Main index - commun
+    // Couleur background de la page index
+    $main-bg-color:#F6F6F6;
+    // Couleur du texte des numéro partie instruction
+    $number-text-color:white;
+    // Couleurs lié au bouton Explorer nos restaurants et Commander
+    $main-bg-btn-color:#9356DC;
+    $second-bg-btn-color:#FF79DA;
+    $btn-text-color:white;
+    // Couleurs background Restaurant-card
+    $restaurant-card-bg:white;
+    // Couleurs lié au panneau Nouveau
+    $new-bg-color: #99E2D0;
+    $new-text-color : #008766;
+    // Couleurs page de chargement
+    $loader-box:grey;
+    $loader-bar-main: #9356DC;
+    $loader-bar-second: #FF79DA;
+    // Couleurs favorite
+    $main-favorite-color:#FF79DA;
+    $second-favorite-color:#9356DC;
 
-$main-bg-btn-color:#9356DC;
-$second-bg-btn-color:#FF79DA;
-$new-bg-color: #99E2D0;
-$new-text-color : #008766;
-$footer-bg-color: #353535;
-$underline-color: #99E2D0;
 
-$menu-card-bg:white;
-$selected-color: #99E2D0;
+// Partie Main restaurants
+    //Modification du background de la page des menus
+    $menu-bg-color:white;
+    // Couleur background des cartes de la page des menus
+    $menu-card-bg:white;
+    // Couleur de la partie souligné en dessous de Entrées, Plats, Desserts
+    $underline-color: #99E2D0;
+    // Couleur partie Selected des plats
+    $selected-color: #99E2D0;
 
-$loader-box:grey;
-$loader-bar-main: #9356DC;
-$loader-bar-second: #FF79DA;
+// Partie Footer
+    $footer-bg-color: #353535;
 
-/// Mixin ///
 
+
+/////// Mixins ///////
+
+// Mixin du bouton Commander pour appliquer linear-gradient
 @mixin btn-bg-color($color1, $color2){
     background: linear-gradient(161deg, $color1, $color2);
 }
-
+// Appliquer flex + centrer hori et verti
 @mixin flex-center{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+// Application du style pour les panneau Nouveau
 @mixin new-panel{
     position: absolute;
     right: 12px;
@@ -43,14 +68,52 @@ $loader-bar-second: #FF79DA;
     background-color: $new-bg-color;
     width: 80px;
     height: 29px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
     border-radius: 2px;
 }
 
-/// Bar de chargement /// 
 
+
+/////// Reset ///////
+
+*{
+    font-family: Roboto;
+
+    h1, h2, h3, p{
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+    p{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    h2{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    a{
+        color:inherit;
+        text-decoration: none;
+    }
+    body{
+        margin: 0;
+    }
+}
+
+/////// Modification style éléments commun ///////
+
+body{
+background-color: $main-bg-color;
+}
+img{
+    object-fit: cover;
+    width: 100%;
+}
+i{
+    @include flex-center();
+}
+
+//Style bar de chargement //
 .loading_page{
     height: 39px;
     display: flex;
@@ -58,7 +121,6 @@ $loader-bar-second: #FF79DA;
     gap: 25px;
     @include flex-center();
 }
-
 .loading_text p{
     width: 250px;
     opacity: 0;
@@ -66,7 +128,6 @@ $loader-bar-second: #FF79DA;
     color: black;
     text-align: center;
 }
-
 .loader{
     width: 250px;
     height: 15px;
@@ -75,7 +136,6 @@ $loader-bar-second: #FF79DA;
     opacity: 0;
     animation: loading-container 3s, disappear 0.5s 3s;
 }
-
 .loader .loader__bar{
     z-index: 2;
     display: inline-block;
@@ -90,6 +150,7 @@ $loader-bar-second: #FF79DA;
     animation: loading 2s 0.5s forwards;
 }
 
+// Keyframes pour l'animation //
 @keyframes loading{
     0%{
         transform: scaleX(0);
@@ -115,7 +176,6 @@ $loader-bar-second: #FF79DA;
         transform: scaleX(1);
     }
 }
-
 @keyframes loading-container{
     0%{
         opacity: 1;
@@ -125,7 +185,6 @@ $loader-bar-second: #FF79DA;
         opacity: 1;
     }
 }
-
 @keyframes appear{
     from{
         opacity:0;
@@ -135,7 +194,6 @@ $loader-bar-second: #FF79DA;
         opacity: 1;
     }
 }
-
 @keyframes disappear{
     from{
         opacity: 1;
@@ -145,48 +203,7 @@ $loader-bar-second: #FF79DA;
         opacity: 0;
     }
 }
-
-/// Modification du user agent style + Ajout du style général ///
-
-
-*{
-    font-family: Roboto;
-
-    h1, h2, h3, p{
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-    }
-
-    p{
-        font-size: 1rem;
-        font-weight: 500;
-    }
-
-    h2{
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    a{
-        color:inherit;
-        text-decoration: none;
-    }
-}
-
-body{
-    margin: 0;
-    background-color: $main-bg-color;
-}
-
-img{
-    object-fit: cover;
-    width: 100%;
-}
-
-i{
-    @include flex-center();
-}
-
+// Style du bouton Explorer nos restaurants et Commander
 .btn{
     color: $btn-text-color;
     @include btn-bg-color($second-bg-btn-color, $main-bg-btn-color);
@@ -200,39 +217,36 @@ i{
     padding-block: 0px;
     padding-inline: 0px;
     transition: all 0.5s;
-
     &:hover{
         opacity: 85%;
         box-shadow: 0px 4px 15px rgb(0 0 0 / 35%)
     }
 }
-
+// Style du coeur pour la partie favorite //
 .favorite{
     height: 21px;
-    
+    // .fa-regular = Coeur non remplie -- .fa-solid = Coeur remplie
     .fa-regular, .fa-solid{
         transform-origin: bottom;
         transition: all 0.5s;
     }
-
     i{
         @include flex-center();
         width: 24px;
         height: 21px;
-    }
-    
+    }  
     .fa-solid{
-        background: linear-gradient(-6deg, #FF79DA,#9356DC);
+        background: linear-gradient(-6deg, $main-favorite-color,$second-favorite-color);
+        // permet d'indiquer la propriété background comme couleur de l'élément plutôt que le fond //
         background-clip: text;
+        // Nécessaire pour éviter la superposition de couleur et background //
         color: transparent;
         transform: scale(0);
     }
-
     .fa-regular{
         position: relative;
         bottom: 20px;
     }
-
     &:hover{
         > .fa-regular{
             transform: scale(0);
@@ -245,12 +259,11 @@ i{
 }
 
 
-/// Header ///
 
+/////// Header ///////
 .header, .header__localisation, .header__logo{
     @include flex-center();
 }
-
 .header{
     flex-direction: column;
  
@@ -263,7 +276,6 @@ i{
             width: 200px;
         }
     }
-
     .img__menu{
         @media only screen and (min-width: 768px){
             padding: 35px 15px 0px 15px;
@@ -297,9 +309,7 @@ i{
             box-shadow: none
         }
     }
-
-    /// Flèche de retour pour revenir à la page d'acceuil /// 
-
+/// Flèche de retour pour revenir à la page d'acceuil /// 
     &__arrow{
         position: absolute;
         left: 23px;
@@ -313,16 +323,14 @@ i{
 }
 
 
-            /// Main ///
+/////// Main ///////
 
-/// Presentation de la page /// 
-
+//Presentation// 
 .presentation{
     @include flex-center();
     flex-direction: column;
     margin-bottom: 57px;
     text-align: center;
-
     opacity: 0;
     animation: appear 1s 3.5s forwards; 
 
@@ -339,7 +347,6 @@ i{
                 margin-bottom: 23px;
             }
         }
-
         p{
             width: 84%;
             height: 46px;
@@ -350,7 +357,6 @@ i{
                 margin-bottom: 23px;
             }
         }
-    
         .btn{
             margin-top: 27px;
 
@@ -360,16 +366,13 @@ i{
         }
 
 }
-
-/// Instruction sur fonctionnement /// 
-
+// Instruction // 
 .instruction{
     display: flex;
     flex-direction: column;
     gap: 25px;
     padding: 48px 20px 68px 20px;
-    background-color: $func-bg-color;
-
+    background-color: $inst-bg-color;
     opacity: 0;
     animation: appear 1s 3.5s forwards; 
 
@@ -382,7 +385,6 @@ i{
         flex-wrap: wrap;
 
     }
-
     @media only screen and (min-width: 1024px){
         padding: 50px 180px;
     }
@@ -392,19 +394,15 @@ i{
             grid-column: 1/4;
         }
     }
-
     i, p{
         @include flex-center();
     }
-
     i{
         margin-left: 34px;
     }
-
     .fa-store{
         color: $main-bg-btn-color;
     }
-
     .number{
         min-height: 24px;
         min-width: 24px;
@@ -444,17 +442,13 @@ i{
         }
     }
 }
-
-/// Restaurants Card /// 
-
+// Restaurants Card //
 .restaurants{
-
     padding: 0px 18px;
     display: flex;
     flex-direction: column;
     gap:18px;
     margin-bottom: 66px;
-
     opacity: 0;
     animation: appear 1s 3.5s forwards; 
 
@@ -464,7 +458,6 @@ i{
         grid-template-rows: 10% 1fr 1fr;
         column-gap: 60px;
     }
-
     @media only screen and (min-width: 1024px){
         padding: 0px 180px;
     }
@@ -477,27 +470,23 @@ i{
             grid-column: 1/3;
         }
     }
-
     h3{
         font-size: 1.125rem;
         margin-bottom: 5px;
     }
-
     span{
         @include new-panel();
         font-size: 1.063rem;
         font-weight: 500;
 
     }
-
     img{
         height: 174px;
         object-position: 20% 61%;
         border-radius: 15px 15px 0px 0px;
     }
 
-    &__card{
-        
+    &__card{   
         display: flex;
         flex-direction: column;
         position: relative;
@@ -509,23 +498,22 @@ i{
             justify-content: space-between;
             align-items: center;
             height: 77px;
-            background-color: white;
+            background-color: $restaurant-card-bg;
             border-radius: 0px 0px 15px 15px;
             }
 
         &-text{
             padding-left: 13px;
         }
-
     }
 }
 
-/// Body Restaurants pages ///
+/////// Restaurants pages ///////
 
+// Main Menu //
 .main_restaurant{
-    background-color: white;
+    background-color: $menu-bg-color;
 }
-
 .menu{
     background-color: $main-bg-color;
     padding: 32px 13px 0px 13px;
@@ -551,13 +539,11 @@ i{
         font-family: Shrikhand;
         font-size: 1.75rem;
     }
-
     h2{
         font-size: 1rem;
         font-weight: 300;
         margin-bottom: 3px;
     }
-
     .menu__restaurant-title, .menu__starters, .menu__main, .menu__desserts{
         margin-bottom: 40px;
 
@@ -586,7 +572,7 @@ i{
         height: 39px;
         padding: 15px;
         border-radius: 15px;
-        background-color: white;
+        background-color: $menu-card-bg;
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
@@ -596,22 +582,21 @@ i{
         h3{
             font-size: 1.125rem;
         }
-
         p{
             font-size: 0.938rem;
             font-weight: 300;
         }
-
         .card__price{
             font-size: 0.938rem;
             font-weight: bold;
         }
-
         .menu__cards--text{
+            //Element obligatoire afin de permettre au texte de s'éclipser après si taille trop petite//
             overflow: hidden;
             white-space: nowrap;    
 
             p, h3{
+                //Element obligatoire afin de permettre au texte de s'éclipser après si taille trop petite//
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -631,16 +616,13 @@ i{
             opacity: 0;
             transition: all 0.25s;
         }
-
         .menu__cards--price-and-selected{
             display: flex;
         }
-
         .menu__cards--price{
             display: flex;
             align-items: end;
         }
-
         .fa-check{
             display: flex;
             width: 25px;
@@ -649,7 +631,6 @@ i{
             background-color: $menu-card-bg;
             color: $selected-color;
         }
-
         &:hover{
             gap: 15px;
 
@@ -658,12 +639,10 @@ i{
                 visibility: visible; 
                 opacity: 1;        
             }
-
             i{
                 visibility: visible;
                 width: 25px;
             }
-
             i::before{
                 width: auto;
             }
@@ -679,8 +658,6 @@ i{
 }
 
 /// Animation menu /// 
-
-
 .menu__starters{
     opacity: 0;
     animation: appear 0.5s 0.5s forwards;
@@ -703,17 +680,12 @@ i{
 
 
 
-
-
-/// Footer ///
-
+// Footer //
 .footer__index{
 opacity: 0;
 animation: appear 1s 3.5s forwards; 
 }
-
 footer{
-
     background-color: $footer-bg-color;
     color: white;
     padding: 22px 25px;
@@ -738,7 +710,6 @@ footer{
             margin: 0px
         }
     }
-
     ul{
         font-size: 1rem;
         list-style-type: none;
@@ -753,7 +724,6 @@ footer{
             gap: 15px;
         }
     }
-
     li{
         margin-bottom: 7px;
 
@@ -763,4 +733,3 @@ footer{
         }
     }
 }
-
