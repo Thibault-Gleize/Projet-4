@@ -308,7 +308,11 @@ i {
     grid-column: 1/4;
   }
 }
-.instruction i, .instruction p {
+.instruction h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.instruction i, .instruction p, .instruction h3 {
   display: flex;
   justify-content: center;
   align-items: center;
