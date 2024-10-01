@@ -354,7 +354,7 @@ i {
   }
 }
 @media only screen and (min-width: 768px) {
-  .instruction__card--content p {
+  .instruction__card--content h3 {
     min-width: 100px;
     padding-right: 50px;
   }
