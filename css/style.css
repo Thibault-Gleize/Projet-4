@@ -434,20 +434,24 @@ i {
   padding-left: 13px;
 }
 
-.main_restaurant {
-  background-color: white;
+@media only screen and (min-width: 768px) {
+  .main_restaurant {
+    background-color: white;
+  }
 }
 
 .menu {
   background-color: #F6F6F6;
   padding: 32px 13px 0px 13px;
   border-radius: 40px 40px 0px 0px;
+  position: relative;
+  bottom: 40px;
 }
 @media only screen and (min-width: 768px) {
   .menu {
     margin: 0px 170px;
-    position: relative;
     z-index: 1;
+    bottom: 5px;
   }
 }
 .menu-bg-img {

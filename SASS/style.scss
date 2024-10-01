@@ -515,17 +515,21 @@ i{
 
 // Main Menu //
 .main_restaurant{
-    background-color: $menu-bg-color;
+    @media only screen and (min-width: 768px){
+        background-color: $menu-bg-color;
+    }
 }
 .menu{
     background-color: $main-bg-color;
     padding: 32px 13px 0px 13px;
     border-radius: 40px 40px 0px 0px;
+    position: relative;
+    bottom: 40px;
 
     @media only screen and (min-width: 768px){
         margin: 0px 170px ;
-        position: relative;
         z-index: 1;
+        bottom: 5px;
     }
 
     &-bg-img{
@@ -535,6 +539,7 @@ i{
             height: 380px;
             position: relative;
             top: 35px;
+            
         }
     }
 
