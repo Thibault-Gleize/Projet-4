@@ -474,6 +474,9 @@ i{
         font-size: 1.125rem;
         margin-bottom: 5px;
     }
+    p{
+        font-weight: 300;
+    }
     span{
         @include new-panel();
         font-size: 1.063rem;

@@ -391,6 +391,9 @@ i {
   font-size: 1.125rem;
   margin-bottom: 5px;
 }
+.restaurants p {
+  font-weight: 300;
+}
 .restaurants span {
   position: absolute;
   right: 12px;
