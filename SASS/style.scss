@@ -398,11 +398,14 @@ i{
         font-size: 1rem;
         font-weight: 500;
     }
-    i, p, h3{
+    i, p{
         @include flex-center();
     }
     i{
-        margin-left: 34px;
+        margin-left: 15px;
+        @media only screen and (min-width: 768px){
+            margin-left: 34px;
+        }
     }
     .fa-store{
         color: $main-bg-btn-color;
@@ -424,12 +427,13 @@ i{
 
         &--content{
             display: flex;
+            justify-content: center;
             position: relative;
             right: 11px;
             gap: 27px;
             background-color: $main-bg-color;
             height: 78px;
-            width: 322px;
+            width: 100%;
             border-radius: 20px;
             box-shadow: 0px 4px 15px rgb(0, 0, 0, 15%);
 
@@ -438,6 +442,9 @@ i{
             }
 
             h3{
+                min-width: 200px;
+                display: flex;
+                align-items: center;
                 @media only screen and (min-width: 768px){
                     min-width: 100px;
                     padding-right: 50px;

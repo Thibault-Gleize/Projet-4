@@ -312,13 +312,18 @@ i {
   font-size: 1rem;
   font-weight: 500;
 }
-.instruction i, .instruction p, .instruction h3 {
+.instruction i, .instruction p {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .instruction i {
-  margin-left: 34px;
+  margin-left: 15px;
+}
+@media only screen and (min-width: 768px) {
+  .instruction i {
+    margin-left: 34px;
+  }
 }
 .instruction .fa-store {
   color: #9356DC;
@@ -339,12 +344,13 @@ i {
 }
 .instruction__card--content {
   display: flex;
+  justify-content: center;
   position: relative;
   right: 11px;
   gap: 27px;
   background-color: #F6F6F6;
   height: 78px;
-  width: 322px;
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
@@ -352,6 +358,11 @@ i {
   .instruction__card--content {
     width: auto;
   }
+}
+.instruction__card--content h3 {
+  min-width: 200px;
+  display: flex;
+  align-items: center;
 }
 @media only screen and (min-width: 768px) {
   .instruction__card--content h3 {
